@@ -1,0 +1,106 @@
+[user]
+    # Set your name and email
+    name = Your Name
+    email = your.email@example.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[color]
+    ui = auto
+
+[alias]
+    # Status
+    s = status
+    st = status -sb
+
+    # Commits
+    c = commit
+    cm = commit -m
+    ca = commit --amend
+    can = commit --amend --no-edit
+
+    # Branches
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bD = branch -D
+
+    # Checkout
+    co = checkout
+    cob = checkout -b
+
+    # Diff
+    d = diff
+    ds = diff --staged
+    dc = diff --cached
+
+    # Log
+    l = log --oneline -10
+    lg = log --oneline --graph --decorate --all
+    ll = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+    # Push/Pull
+    p = push
+    pf = push --force-with-lease
+    pl = pull
+    plr = pull --rebase
+
+    # Stash
+    ss = stash save
+    sl = stash list
+    sp = stash pop
+    sa = stash apply
+
+    # Reset
+    unstage = reset HEAD --
+    undo = reset --soft HEAD^
+
+    # Misc
+    aliases = config --get-regexp alias
+    contributors = shortlog --summary --numbered
+    last = log -1 HEAD --format=format:'%Cred%H'
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[pull]
+    rebase = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[credential]
+    helper = osxkeychain
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

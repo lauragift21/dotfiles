@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Secrets and credentials
+.env
+.env.local
+*.pem
+*.key
+credentials.json
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Backup files
+*.bak
+*.backup
+
+# Local overrides
+.zshrc.local
+.gitconfig.local
