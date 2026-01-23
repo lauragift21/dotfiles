@@ -3,9 +3,7 @@
 # =============================================================================
 # Install everything: brew bundle install
 
-# Taps
-tap "homebrew/bundle"
-tap "homebrew/services"
+# Taps (add custom taps here if needed)
 
 # =============================================================================
 # CLI Tools
@@ -29,6 +27,10 @@ brew "curl"                 # Transfer data
 brew "httpie"               # HTTP client
 brew "tldr"                 # Simplified man pages
 brew "git-delta"            # Better git diff
+brew "zsh-syntax-highlighting"  # Shell syntax highlighting
+brew "lazygit"              # Terminal UI for git
+brew "lazydocker"           # Terminal UI for docker
+brew "thefuck"              # Auto-correct commands
 
 # Development
 brew "node"                 # Node.js
@@ -50,15 +52,10 @@ brew "awscli"               # AWS CLI
 # Applications (Casks)
 # =============================================================================
 cask "visual-studio-code"   # Code editor
-cask "iterm2"               # Terminal emulator
 cask "raycast"              # Spotlight replacement
 cask "arc"                  # Browser
 cask "notion"               # Notes & docs
-cask "slack"                # Team communication
-cask "discord"              # Community chat
 cask "spotify"              # Music
-cask "1password"            # Password manager
-cask "rectangle"            # Window management
 cask "obsidian"             # Knowledge base
 cask "figma"                # Design tool
 cask "docker"               # Docker Desktop

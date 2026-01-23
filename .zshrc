@@ -21,6 +21,11 @@ export HISTSIZE=50000
 export SAVEHIST=50000
 
 # -----------------------------------------------------------------------------
+# Shell Options
+# -----------------------------------------------------------------------------
+setopt AUTO_CD                   # Type directory name to cd into it
+
+# -----------------------------------------------------------------------------
 # History Options
 # -----------------------------------------------------------------------------
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format
@@ -45,11 +50,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-# List files
-alias ls="ls -G"
-alias ll="ls -lah"
-alias la="ls -A"
-alias l="ls -CF"
+# List files (using eza)
+alias ls="eza"
+alias ll="eza -la --icons --git"
+alias la="eza -a"
+alias l="eza -l --icons"
+alias tree="eza --tree --icons"
 
 # Git
 alias g="git"
@@ -66,6 +72,8 @@ alias glog="git log --oneline --graph --decorate"
 # Editor
 alias vim="nvim"
 alias v="nvim"
+alias lg="lazygit"
+alias lzd="lazydocker"
 
 # Directories
 alias dev="cd ~/Code"
@@ -75,6 +83,8 @@ alias dotfiles="cd ~/Code/infra/dotfiles"
 alias reload="source ~/.zshrc"
 alias path='echo -e ${PATH//:/\\n}'
 alias myip="curl -s https://ipinfo.io/ip"
+alias cat="bat"
+alias catp="bat -p"  # plain, no line numbers
 
 # macOS specific
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
@@ -135,3 +145,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # FZF (if installed)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# Thefuck (command correction)
+eval "$(thefuck --alias)"
+
+# Zsh Syntax Highlighting (must be last)
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

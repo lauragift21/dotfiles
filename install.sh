@@ -86,7 +86,7 @@ fi
 # -----------------------------------------------------------------------------
 print_step "Installing Homebrew packages from Brewfile..."
 if [ -f "$DOTFILES_DIR/Brewfile" ]; then
-    brew bundle install --file="$DOTFILES_DIR/Brewfile" --no-lock
+    brew bundle install --file="$DOTFILES_DIR/Brewfile"
     print_success "Homebrew packages installed"
 else
     print_warning "Brewfile not found, skipping..."
